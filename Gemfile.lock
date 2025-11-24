@@ -72,16 +72,12 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
-  json
   pry (~> 0.14.2)
   pry-byebug (~> 3.10.1)
   rspec (~> 3.12)
-  rspec-core (~> 3.12)
-  rspec-expectations (~> 3.12)
-  rspec-mocks (~> 3.12)
-  rspec-support (~> 3.12)
   rubocop (~> 1.59)
   rubocop-rspec (~> 2.25)
   thor

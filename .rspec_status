@@ -1,8 +1,42 @@
-example_id                               | status | run_time        |
----------------------------------------- | ------ | --------------- |
-./spec/mirrorwatch/logger_spec.rb[1:1:1] | passed | 0.00873 seconds |
-./spec/mirrorwatch/logger_spec.rb[1:2:1] | passed | 0.00058 seconds |
-./spec/mirrorwatch/logger_spec.rb[1:2:2] | passed | 0.00007 seconds |
-./spec/mirrorwatch/logger_spec.rb[1:2:3] | passed | 0.00009 seconds |
-./spec/mirrorwatch/logger_spec.rb[1:2:4] | passed | 0.00008 seconds |
-./spec/mirrorwatch/logger_spec.rb[1:2:5] | passed | 0.0023 seconds  |
+example_id                                 | status | run_time        |
+------------------------------------------ | ------ | --------------- |
+./spec/mirrorwatch/config_spec.rb[1:1:1:1] | passed | 0.00808 seconds |
+./spec/mirrorwatch/config_spec.rb[1:1:2:1] | passed | 0.00489 seconds |
+./spec/mirrorwatch/config_spec.rb[1:1:3:1] | passed | 0.00051 seconds |
+./spec/mirrorwatch/config_spec.rb[1:1:4:1] | passed | 0.00087 seconds |
+./spec/mirrorwatch/config_spec.rb[1:1:5:1] | passed | 0.00537 seconds |
+./spec/mirrorwatch/config_spec.rb[1:1:6:1] | passed | 0.00997 seconds |
+./spec/mirrorwatch/logger_spec.rb[1:1:1]   | passed | 0.0048 seconds  |
+./spec/mirrorwatch/logger_spec.rb[1:2:1]   | passed | 0.0001 seconds  |
+./spec/mirrorwatch/logger_spec.rb[1:2:2]   | passed | 0.00012 seconds |
+./spec/mirrorwatch/logger_spec.rb[1:2:3]   | passed | 0.00015 seconds |
+./spec/mirrorwatch/logger_spec.rb[1:2:4]   | passed | 0.00011 seconds |
+./spec/mirrorwatch/logger_spec.rb[1:2:5]   | passed | 0.0027 seconds  |
+./spec/mirrorwatch/syncer_spec.rb[1:1:1]   | passed | 0.00155 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:1:2]   | passed | 0.00216 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:1:3]   | passed | 0.00315 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:2:1:1] | passed | 0.04843 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:2:1:2] | passed | 0.04767 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:2:1:3] | passed | 0.04892 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:2:1:4] | passed | 0.04833 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:2:2:1] | passed | 0.0463 seconds  |
+./spec/mirrorwatch/syncer_spec.rb[1:2:2:2] | passed | 0.04643 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:2:3:1] | passed | 0.50326 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:2:3:2] | passed | 0.05545 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:2:3:3] | passed | 0.00314 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:2:4:1] | passed | 0.05111 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:2:4:2] | passed | 0.04747 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:2:5:1] | passed | 0.00219 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:2:5:2] | passed | 0.00168 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:2:5:3] | passed | 0.00157 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:3:1]   | passed | 0.00131 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:3:2]   | passed | 0.00274 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:3:3]   | passed | 0.00195 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:3:4]   | passed | 0.00146 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:3:5]   | passed | 0.00137 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:3:6]   | passed | 0.00273 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:3:7]   | passed | 0.0043 seconds  |
+./spec/mirrorwatch/syncer_spec.rb[1:3:8]   | passed | 0.00528 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:4:1]   | passed | 0.00199 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:4:2]   | passed | 0.00183 seconds |
+./spec/mirrorwatch/syncer_spec.rb[1:4:3]   | passed | 0.00168 seconds |

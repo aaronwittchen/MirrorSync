@@ -16,6 +16,12 @@
 require 'bundler/setup'
 require 'rspec'
 require 'timecop'
+require 'fileutils'
+require 'tmpdir'
+require 'stringio'
+require 'yaml'
+
+require_relative '../lib/mirrorwatch/config'
 
 # Require your main lib files
 $LOAD_PATH.unshift(File.expand_path('../lib', __dir__))
@@ -36,13 +42,88 @@ RSpec.configure do |config|
   config.order = :random
   Kernel.srand config.seed
 
-  # Enable zero-monkey patching mode
-  config.disable_monkey_patching!
-
   # Enable focused tests
   config.filter_run_when_matching :focus
   
   # Print the 10 slowest examples and example groups at the end of the run
   # Always enabled for small projects to help identify performance bottlenecks
   config.profile_examples = 10
+
+  # Clean up lock files after each test
+  config.after(:each) do
+    # Remove any lock files created during tests
+    Dir.glob('/tmp/mirrorwatch-*.lock').each do |lock_file|
+      FileUtils.rm_f(lock_file)
+    end
+  end
+
+  # Helper methods available in all specs
+  config.include Module.new {
+    # Capture stdout for testing output
+    def capture_stdout
+      old_stdout = $stdout
+      $stdout = StringIO.new
+      yield
+      $stdout.string
+    ensure
+      $stdout = old_stdout
+    end
+
+    # Capture stderr for testing error output
+    def capture_stderr
+      old_stderr = $stderr
+      $stderr = StringIO.new
+      yield
+      $stderr.string
+    ensure
+      $stderr = old_stderr
+    end
+
+    # Create a temporary test mirror directory structure
+    def create_test_mirror(base_path)
+      FileUtils.mkdir_p("#{base_path}/dists/stable")
+      File.write("#{base_path}/dists/stable/Release", "Test Release File\n")
+      File.write("#{base_path}/dists/stable/Packages", "Test Packages\n")
+      File.write("#{base_path}/dists/stable/InRelease", "Test InRelease\n")
+      File.write("#{base_path}/test.txt", "Include this file\n")
+      File.write("#{base_path}/test.log", "Exclude this file\n")
+      File.write("#{base_path}/README.md", "Exclude markdown\n")
+    end
+
+    # Mock a successful rsync execution
+    def mock_successful_rsync
+      allow(Open3).to receive(:capture3).and_return([
+        <<~OUTPUT,
+          Number of files: 100
+          Number of files transferred: 10
+          Total transferred file size: 1.23MB
+          Total bytes sent: 123456
+          Total bytes received: 654321
+        OUTPUT
+        '',
+        double(exitstatus: 0, success?: true)
+      ])
+    end
+
+    # Mock a failed rsync execution
+    def mock_failed_rsync(error_message = 'rsync error')
+      allow(Open3).to receive(:capture3).and_return([
+        '',
+        error_message,
+        double(exitstatus: 1, success?: false)
+      ])
+    end
+
+    # Mock a slow rsync (for locking tests)
+    def mock_slow_rsync(duration: 0.5)
+      allow(Open3).to receive(:capture3) do
+        sleep duration
+        [
+          'Number of files: 10',
+          '',
+          double(exitstatus: 0, success?: true)
+        ]
+      end
+    end
+  }
 end

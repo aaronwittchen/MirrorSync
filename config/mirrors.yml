@@ -1,0 +1,25 @@
+debian-minimal:
+  upstream: "rsync://deb.debian.org/debian/"
+  local_path: "./mirrors/debian-minimal"
+  bwlimit: "5m"
+  include:
+    - "dists/stable/Release"
+    - "dists/stable/Release.gpg"
+    - "dists/stable/InRelease"
+  exclude:
+    - "*"
+
+ubuntu-minimal:
+  upstream: "rsync://archive.ubuntu.com/ubuntu/"
+  local_path: "./mirrors/ubuntu-minimal"
+  bwlimit: "5m"
+  include:
+    - "dists/noble/Release"
+    - "dists/noble/Release.gpg"
+    - "dists/noble/InRelease"
+  exclude:
+    - "*"
+
+test-local:
+  upstream: "/tmp/fake-mirror/"
+  local_path: "./mirrors/test-local"
