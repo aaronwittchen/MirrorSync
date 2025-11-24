@@ -9,8 +9,6 @@ A production-grade mirror synchronization system for Linux distribution reposito
 
 > **Note:** This is a very early work in progress
 
----
-
 ## Overview
 
 MirrorWatch is a mirror synchronization tool designed for operating mirror infrastructure. It wraps rsync with additional operational features including bandwidth management, concurrent operation prevention, selective synchronization, and structured logging. The system is built to handle both small-scale personal mirrors and production mirror services.
@@ -26,8 +24,6 @@ MirrorWatch is a mirror synchronization tool designed for operating mirror infra
 - File-based locking using POSIX flock
 - Structured JSON logging for log aggregation
 - Comprehensive test coverage (40+ test cases)
-
----
 
 ## Key Features
 
