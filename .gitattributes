@@ -1,0 +1,81 @@
+# Set the default behavior for all files
+text=auto eol=lf
+
+# Ensure Windows batch files work as expected
+*.bat text eol=crlf
+
+# Standard Ruby files
+*.rb text eof=lf
+*.rake text eof=lf
+*.gemspec text eof=lf
+
+# Test files
+*.rspec text eof=lf
+*.feature text eof=lf
+*.feature,*.feature\x2E* text eof=lf
+
+# Configuration files
+*.yml text eof=lf
+*.yaml text eof=lf
+*.json text eof=lf
+*.md text eof=lf
+
+# Lock files
+Gemfile.lock text eof=lf
+*.lock text eof=lf
+
+# Documentation
+*.rdoc text eof=lf
+*.md.erb text eof=lf
+*.html.erb text eof=lf
+
+# Shell scripts
+*.sh text eof=lf
+*.bash text eof=lf
+*.zsh text eof=lf
+
+# Git files
+.gitattributes text eof=lf
+.gitignore text eof=lf
+.gitmodules text eof=lf
+
+# Editor files
+.editorconfig text eof=lf
+*.sublime-* text eof=lf
+.vscode/* text eof=lf
+.idea/* text eof=lf
+
+# Logs and temp files
+log/*.log text eof=lf
+tmp/**/* text eof=lf
+
+# Binary files (mark as binary)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.eot binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+*.otf binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.tar binary
+*.gem binary
+
+# Don't modify these files as they contain CRLFs on purpose
+*.sln text eof=crlf
+*.vcxproj text eof=crlf
+*.vcxproj.filters text eof=crlf
+*.cmd text eof=crlf
+*.ps1 text eof=crlf
+*.psm1 text eof=crlf
+*.psd1 text eof=crlf
+*.ps1xml text eof=crlf
+*.psc1 text eof=crlf
+*.pssc text eof=crlf
+*.cdxml text eof=crlf
+*.clixml text eof=crlf

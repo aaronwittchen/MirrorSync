@@ -1,0 +1,8 @@
+example_id                               | status | run_time        |
+---------------------------------------- | ------ | --------------- |
+./spec/mirrorwatch/logger_spec.rb[1:1:1] | passed | 0.00873 seconds |
+./spec/mirrorwatch/logger_spec.rb[1:2:1] | passed | 0.00058 seconds |
+./spec/mirrorwatch/logger_spec.rb[1:2:2] | passed | 0.00007 seconds |
+./spec/mirrorwatch/logger_spec.rb[1:2:3] | passed | 0.00009 seconds |
+./spec/mirrorwatch/logger_spec.rb[1:2:4] | passed | 0.00008 seconds |
+./spec/mirrorwatch/logger_spec.rb[1:2:5] | passed | 0.0023 seconds  |

@@ -1,0 +1,39 @@
+require:
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 3.4
+  NewCops: enable
+  Exclude:
+    - bin/*
+    - spec/spec_helper.rb
+    - spec/mirrorwatch/logger_spec.rb 
+    - Gemfile 
+
+Layout/LineLength:
+  Max: 120
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  ConsistentQuotesInMultiline: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 15
+
+Layout/EndOfLine:
+  Enabled: false
+
+RSpec/Capybara:
+  Enabled: false
+
+RSpec/FactoryBot:
+  Enabled: false
+
+RSpec/Rails:
+  Enabled: false
